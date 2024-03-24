@@ -1,13 +1,14 @@
-import mongoose from "mongoose"
-import { cl } from "../utils/console.log.js"
+import react_dom from 'react-dom/client'
+import Title from './components/title.jsx'
+import MainContent from './components/main_content.jsx'
 
-
-/*********************This code is only if you are using Mongo DB database in your application***********************/
-const connect_to_mongodb = async () => {
-    await mongoose.connect(process.env.MONGO_DB_CONNECTION_STRING)
-        .then(() => {
-            cl('Yes, mongoDB successfully connected')
-        })
+const MainComponent = () => {
+    return (
+        <div>
+            <Title />
+            <MainContent />
+        </div>
+    )
 }
 
-export { connect_to_mongodb }
+react_dom.createRoot(document.getElementById('rootComponent')).render(<MainComponent />)
