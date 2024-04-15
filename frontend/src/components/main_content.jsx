@@ -166,17 +166,20 @@ const MainContent = () => {
     useEffect(() => {
         set_is_loading({ ...is_loading, loading: true })
         const get_domains = async () => {
-            await axios.get('http://localhost:5000/api/v1/domain/get')
-                .then(async res => {
-                    cl(res.data.body)
-                    await prepare_jsx(res.data.body)
-                    set_is_loading({ ...is_loading, loading: false })
-                })
-                .catch(err => {
-                    cl(err.response.data)
-                    set_alerts({ ...alerts, failure: true, failure_message: err.response.data.message })
-                    set_is_loading({ ...is_loading, loading: false })
-                })
+            try {
+                await axios.get('http://localhost:5000/api/v1/domain/get')
+                    .then(async res => {
+                        cl(res.data.body)
+                        await prepare_jsx(res.data.body)
+                        set_is_loading({ ...is_loading, loading: false })
+                    })
+                    .catch(err => {
+                        cl(err.response.data)
+                        set_alerts({ ...alerts, failure: true, failure_message: err.response.data.message })
+                        set_is_loading({ ...is_loading, loading: false })
+                    })
+            }
+            catch { }
         }
         get_domains()
     }, [])
