@@ -2,6 +2,6 @@ An easiest Domain Managing Dashboard with an elegant and professional UI for all
 
 Every single API call to AWS Route 53 is made using AWS SDK Version 3 for Nodejs.
 
-•	Technologies used: MERN stack, HTML, CSS, Javascript, AWS SDK V3, Bootstrap.
+•	Technologies used: MongoDB, Express JS, React JS, NodeJS, HTML, CSS, Javascript, AWS SDK V3, Bootstrap.
 
  Watch the full vedio recording of the project using the following link :  https://drive.google.com/file/d/1n6ylLdbKkwwEUJIcHD69MmfxB4TghJG4/view?usp=sharing
